@@ -17,7 +17,7 @@ LEFT JOIN Song s ON s.AlbumId = al.AlbumId
 LEFT JOIN Artist ar ON al.ArtistId = ar.ArtistId
 WHERE al.Title = 'Red'
 
--- RETURNS SONG AMOUTN ON ALBUMS
+-- RETURNS SONG AMOUNT ON ALBUMS
 
 SELECT al.Title, COUNT(al.Title)
 FROM Album al 
@@ -45,5 +45,6 @@ FROM Album al
 
 -- GET LONGEST SONG
 
-SELECT al.Title, MAX (DISTINCT al.AlbumLength)
-FROM Album al
+SELECT Album.Title, song.Title, MAX (SongLength)
+FROM song, Album
+ON song.AlbumId = album.AlbumId
