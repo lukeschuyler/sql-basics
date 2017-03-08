@@ -11,6 +11,8 @@ VALUES ('One More Red Nightmare', '740', '1974', '2', '29', '24');
 
 -- SELECT ARTIST ALBUM SONG FROM ALBUM
 
+-- MUSIC HISTORY EXERCISE 
+
 SELECT ar.ArtistName, al.Title, s.Title
 FROM Album al 
 LEFT JOIN Song s ON s.AlbumId = al.AlbumId
